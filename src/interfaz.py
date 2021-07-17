@@ -34,9 +34,9 @@ interfaz.geometry('%dx%d+%d+%d' % (w, h, x, y))
 interfaz.resizable(width=False, height=False)
 ### IMAGENES
 
-fondo = PhotoImage(file = "canal2.png")
+fondo = PhotoImage(file = "./img/canal2.png")
 fondo2=Label(interfaz, image=fondo).place(x=0,y=0)
-logo=PhotoImage(file="logo.png")
+logo=PhotoImage(file="./img/logo.png")
 logoR=logo.subsample(2,2)
 logoDis=Label(interfaz, image=logoR).place(x=320,y=30)
 
@@ -113,10 +113,8 @@ def calcular():
     
     if tipoEstructura==1: #rectangular 
         valores_y2_Desnivel=y2_Desnivelrec(valoresDisVertedero[6],nCalc,pendienteCalc,bCalc,valorTirante[0],qCalc,HdCalc)
-        print("calculo de la opcion 1")
     else:
         valores_y2_Desnivel= y2_DesnivelTrap(valoresDisVertedero[6],nCalc,pendienteCalc,bCalc,zCalc,valorTirante[0],qCalc,HdCalc)
-        print("calculo de la opcion 2")
 
     Ry1.set(valorTirante[0])
     Rvel.set(valorTirante[1])
@@ -140,14 +138,6 @@ def v2():
     ventana2.geometry('%dx%d+%d+%d' % (w, h, x, y))
     ventana2.title("Diseño vertedero pico de pato")
 
-    #------------------------
-    #Para Pruebas. Quitar
-
-    def key2(event):
-        if str(event.char) == 'q' or str(event.char) == 'Q':
-            ventana2.quit()
-
-    ventana2.bind("<Key>", key)
 
 #Datos de entrada
   
@@ -242,22 +232,22 @@ def v2():
 
 #Imágenes en ventana 2 con label correspondientes
 
-    canalTr = PhotoImage(file = "canaltrapez.png")
+    canalTr = PhotoImage(file = "./img/canaltrapez.png")
     canalTrr = canalTr.subsample(9)
     canalTr2 = Label(ventana2,image = canalTrr).place(x = 10,y = 460)
     tit1 = Label(ventana2,text = "ESQUEMA",font = ("arial",9,"bold")).place(x = 120,y = 400)
     tit1 = Label(ventana2,text = "SECCIÓN TRANSVERSAL DEL CANAL",font = ("arial",9,"bold")).place(x = 50,y = 430)
     tit2 = Label(ventana2,text = "VERTEDERO PICO DE PATO VISTA PLANTA",font = ("arial",9,"bold")).place(x = 820,y = 60)
-    ppRect = PhotoImage(file = "ppatorec.png")
+    ppRect = PhotoImage(file = "./img/ppatorec.png")
     ppRectr = ppRect.subsample(11)
     ppPerfil2 = Label(ventana2,image = ppRectr).place(x = 640,y = 120)
-    ppatoTr = PhotoImage(file = "ppatoTr.png")
+    ppatoTr = PhotoImage(file = "./img/ppatoTr.png")
     ppTrr = ppatoTr.subsample(11) 
     ppatoTr2 = Label(ventana2,image = ppTrr).place(x = 930,y = 120)
     tit11 = Label(ventana2,text = "sección rectangular", font = ("Gabriola",14)).place(x = 700,y = 300)
     tit12 = Label(ventana2,text = "sección trapezoidal",font = ("Gabriola",14)).place(x = 980,y = 300)
     tit2 = Label(ventana2,text = "VERTEDERO PICO DE PATO VISTA PERFIL",font = ("arial",9,"bold")).place(x = 820,y = 390)
-    ppPerfil = PhotoImage(file = "vertederoPICOPATO.png")
+    ppPerfil = PhotoImage(file = "./img/vertederoPICOPATO.png")
     ppPerfilr = ppPerfil.subsample(5) 
     ppPerfil2 = Label(ventana2,image = ppPerfilr).place(x = 750,y = 420)
     ventana2.resizable(width=False, height=False)
@@ -356,7 +346,6 @@ def partidor():
 
 
     #Canal trapezoidal
-    print(canal_trapezoidal)
     resultado_partidor = calculo_partidor(entrada_Q, entrada_y, entrada_b, entrada_z, entrada_long_vertedero, entrada_n, entrada_cotaA, entrada_s, entrada_Qp, entrada_yp, entrada_bp, entrada_zp, entrada_Qs, entrada_ys, entrada_bs, entrada_zs, entrada_angulo, entrada_cotaB, entrada_cotaC)
 
     if canal_trapezoidal == 2:
@@ -567,13 +556,13 @@ def v3():
     Label(ventana3, text = "TIPO DE PARTIDOR",font = ("arial",9,"bold")).place(x = 580,y = 20)
    
     #Imágenes en ventana 3 con label correspondientes
-    imagen_partidor = PhotoImage(file = "partidor.png")
+    imagen_partidor = PhotoImage(file = "./img/partidor.png")
     imagen_parti = imagen_partidor.subsample(6) 
     partidor_planta = Label(ventana3, image = imagen_parti).place(x = 920, y = 460)
     Label(ventana3, text = "VISTA DE PERFIL",font = ("arial",9,"bold")).place(x = 320,y = 520)
     Label(ventana3, text = "Y PLANTA DEL",font = ("arial",9,"bold")).place(x = 320,y = 540)
     Label(ventana3, text = "DEL PARTIDOR",font = ("arial",9,"bold")).place(x = 320,y = 560)
-    imagen_ppartidor = PhotoImage(file = "perfilPartidor.png")
+    imagen_ppartidor = PhotoImage(file = "./img/perfilPartidor.png")
     imagen_pparti = imagen_ppartidor.subsample(5) 
     partidor_perfil = Label(ventana3, image = imagen_pparti).place(x = 430, y = 470)
 
@@ -587,15 +576,6 @@ Mensaje= Label(interfaz, text= "DISEÑO DE ESTRUCTURAS HIDRÁULICAS:", font=("ga
 button1 = Button(interfaz, text="Vertedero pico de pato",font=("calibri",14),command=v2).place(x=200,y=310)
 button2 = Button(interfaz, text="Partidor proporcional",font=("Calibri",14),command=v3).place(x=430,y=310)
 
-#------------------------
-#Para Pruebas. Quitar
-
-def key(event):
-    if str(event.char) == 'q' or str(event.char) == 'Q':
-        interfaz.quit()
-
-
-interfaz.bind("<Key>", key)
 
 #------------------------
 
