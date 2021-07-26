@@ -5,9 +5,9 @@ La siguiente aplicación se desarrollo para el trabajo de grado titulado *Desarr
 ## Instalación
 ### **Windows**
 
-En windows no es necesario instalar un programa previo basta con descargar este repositorio en una carpeta comprimida en formato zip, descomprima la carpeta y siga la siguiente ruta: 
+En Windows no es necesario instalar un programa previo, basta con descargar este repositorio en una carpeta comprimida en formato zip, descomprima la carpeta y siga la siguiente ruta: 
 
-'HidraVP_escritorio -> ejecutable -> aplicacion' 
+`HidraVP_escritorio -> ejecutable -> aplicacion`
 
 Esta ultima carpeta contiene el archivo aplicacion.exe al dar doble clic sobre el, inmediatamente dara inicio a la herramienta.
 
